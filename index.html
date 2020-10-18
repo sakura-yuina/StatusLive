@@ -1,123 +1,105 @@
 <!DOCTYPE html>
 <html class="full-height">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>状态监控 - MikuStatus</title>
-        <link href="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/css/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet">
-        <link href="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/css/bootstrap.min.css" rel="stylesheet">
-        <link href="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/css/mdb.min.css" rel="stylesheet">
-        <link href="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/css/style.min.css" rel="stylesheet">
-    </head>
-    
-    <body>
-        <main>
-            <div class="container" style="margin-top:3%">
-                 <h2 class="h1 mb-4"><span id="title_big"></span>&nbsp;&nbsp;<span style="font-size:1.7rem" id="title_small"></span></h2>
-
-                <!--<div></div>-->
-                <div class="spinner" id="loading">
-                    <div class="double-bounce1"></div>
-                    <div class="double-bounce2"></div>
-                </div>
-                <div class="" id="all_card" style="display:none;">
-                     <h5 id="texts">报告生成时间：<span id="report_time">2020年10月1日 10:00:01</span>&nbsp;&nbsp;&nbsp;<i class="fa fa-refresh" aria-hidden="true" style="font-size: 1rem;"></i>&nbsp;<span class="seconds">300s</span></h5>
-
-                    <br />
-                    <div class="card hoverable" id="card_website">
-                        <div class="card-body">
-                             <h4 class="card-title">实时总览<span style="font-size:1rem">&nbsp;Ontime</span></h4>
-
-                            <table class="table table-borderless table-sm">
-                                <tbody>
-                                    <tr>
-                                        <td><span class="bullet success-bg"></span>
-
-                                        </td>
-                                        <td class="td_new_font_size"><span class="success">正常运转</span>&nbsp;<span class="success" id="up_server">?</span>&nbsp;<span class="success">个</span>
-
-                                        </td>
-                                        <td><span class="bullet danger-bg"></span>
-
-                                        </td>
-                                        <td class="td_new_font_size"><span class="danger">发生故障</span>&nbsp;<span class="danger" id="down_server">?</span>&nbsp;<span class="danger">个</span>
-
-                                        </td>
-                                        <td><span class="bullet paused-bg"></span>
-
-                                        </td>
-                                        <td class="td_new_font_size"><span class="paused">暂停监控</span>&nbsp;<span class="paused" id="paused_server">?</span>&nbsp;<span class="paused">个</span>
-
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="td_new_font_size" colspan="2" id="pass_1d_td">过去24小时：<span id="pass_1d">???.??</span>%</td>
-                                        <td class="td_new_font_size" colspan="2" id="pass_7d_td">过去7天：<span id="pass_7d">???.??</span>%</td>
-                                        <td class="td_new_font_size" colspan="2" id="pass_30d_td">过去30天：<span id="pass_30d">???.??</span>%</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="td_new_font_size" colspan="6" id="latest_downtime">最近一次故障：数据获取中...</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                                        <!-- HTTP 监控 -->
-                    <div class="card hoverable">
-                        <div class="card-body">
-                             <h4 class="card-title">相关站点<span style="font-size:1rem">&nbsp;WebSite</span></h4>
-
-                            <table class="table table-borderless table-sm">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">状态</th>
-                                        <th scope="col">可用率</th>
-                                        <th scope="col">名称</th>
-                                        <th scope="col">详细可用率（过去7天）</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="website_list"></tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <!-- /HTTP 监控 -->
-
-                    
-                    <!-- Ping 监控 -->
-                    <div class="card hoverable" id="card_datacenter">
-                        <div class="card-body">
-                             <h4 class="card-title">CDN主分发节点<span style="font-size:1rem">&nbsp;Center Node</span></h4>
-
-                            <table class="table table-borderless table-sm">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">状态</th>
-                                        <th scope="col">可用率</th>
-                                        <th scope="col">名称</th>
-                                        <th scope="col">详细可用率（过去7天）</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="datacenter_list"></tbody>
-                            </table>
-                        </div>
-                    </div>
-                    
-                    <div id="all_modal"></div>
-                    
-                    <footer id="main-footer" style="text-align:right;">Data&nbsp;by&nbsp;Uptimerobot</footer>
-                    <br>
-                    <br>
-                    <br>
-                </div>
-            </div>
-        </main>
-        <script src="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/js/jquery-3.3.1.min.js"></script>
-        <script src="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/js/popper.min.js"></script>
-        <script src="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/js/bootstrap.min.js"></script>
-        <script src="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/js/mdb.min.js"></script>
-        <script src="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/js/core.min.js"></script>
-        <script>
+ <head> 
+  <meta charset="utf-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> 
+  <meta http-equiv="x-ua-compatible" content="ie=edge" /> 
+  <title>状态监控 - MikuStatus</title> 
+  <link href="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/css/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" /> 
+  <link href="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/css/bootstrap.min.css" rel="stylesheet" /> 
+  <link href="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/css/mdb.min.css" rel="stylesheet" /> 
+  <link href="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/css/style.min.css" rel="stylesheet" /> 
+ </head> 
+ <body> 
+  <main> 
+   <div class="container" style="margin-top:1%"> 
+    <h2 class="h1 mb-4"><span id="title_big"></span>&nbsp;&nbsp;<span style="font-size:1.7rem" id="title_small"></span></h2> 
+    <!--<div></div>--> 
+    <div class="spinner" id="loading"> 
+     <div class="double-bounce1"></div> 
+     <div class="double-bounce2"></div> 
+    </div> 
+    <div class="" id="all_card" style="display:none;"> 
+     <h5 id="texts">报告生成时间：<span id="report_time">2020年10月1日 10:00:01</span>&nbsp;&nbsp;&nbsp;
+         <i class="fa fa-refresh" aria-hidden="true" style="font-size:1rem"></i>&nbsp;
+         <span class="seconds">300s</span></h5> 
+     <br /> 
+     <div class="card hoverable" id="card_website"> 
+      <div class="card-body"> 
+       <h4 class="card-title">实时总览<span style="font-size:1rem">&nbsp;Ontime</span></h4> 
+       <table class="table table-borderless table-sm"> 
+        <tbody> 
+         <tr> 
+          <td><span class="bullet success-bg"></span> </td> 
+          <td class="td_new_font_size"><span class="success">正常运转</span>&nbsp;<span class="success" id="up_server">?</span>&nbsp;<span class="success">个</span> </td> 
+          <td><span class="bullet danger-bg"></span> </td> 
+          <td class="td_new_font_size"><span class="danger">发生故障</span>&nbsp;<span class="danger" id="down_server">?</span>&nbsp;<span class="danger">个</span> </td> 
+          <td><span class="bullet paused-bg"></span> </td> 
+          <td class="td_new_font_size"><span class="paused">暂停监控</span>&nbsp;<span class="paused" id="paused_server">?</span>&nbsp;<span class="paused">个</span> </td> 
+         </tr> 
+         <tr> 
+          <td class="td_new_font_size" colspan="2" id="pass_1d_td">过去24小时：<span id="pass_1d">???.??</span>%</td> 
+          <td class="td_new_font_size" colspan="2" id="pass_7d_td">过去7天：<span id="pass_7d">???.??</span>%</td> 
+          <td class="td_new_font_size" colspan="2" id="pass_30d_td">过去30天：<span id="pass_30d">???.??</span>%</td> 
+         </tr> 
+         <tr> 
+          <td class="td_new_font_size" colspan="6" id="latest_downtime">最近一次故障：数据获取中...</td> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div> 
+     </div> 
+     <!-- HTTP 监控 --> 
+     <div class="card hoverable"> 
+      <div class="card-body"> 
+       <h4 class="card-title">相关站点<span style="font-size:1rem">&nbsp;WebSite</span></h4> 
+       <table class="table table-borderless table-sm"> 
+        <thead> 
+         <tr> 
+          <th scope="col">状态</th> 
+          <th scope="col">可用率</th> 
+          <th scope="col">名称</th> 
+          <th scope="col">详细可用率（过去7天）</th> 
+         </tr> 
+        </thead> 
+        <tbody id="website_list"></tbody> 
+       </table> 
+      </div> 
+     </div> 
+     <!-- /HTTP 监控 --> 
+     <!-- Ping 监控 --> 
+     <div class="card hoverable" id="card_datacenter"> 
+      <div class="card-body"> 
+       <h4 class="card-title">CDN主分发节点<span style="font-size:1rem">&nbsp;Center Node</span></h4> 
+       <table class="table table-borderless table-sm"> 
+        <thead> 
+         <tr> 
+          <th scope="col">状态</th> 
+          <th scope="col">可用率</th> 
+          <th scope="col">名称</th> 
+          <th scope="col">详细可用率（过去7天）</th> 
+         </tr> 
+        </thead> 
+        <tbody id="datacenter_list"></tbody> 
+       </table> 
+      </div> 
+     </div> 
+     <div id="all_modal"></div> 
+     <footer id="main-footer" style="text-align:right;">
+      Data&nbsp;by&nbsp;Uptimerobot
+     </footer> 
+     <br /> 
+     <br /> 
+     <br /> 
+    </div> 
+   </div> 
+  </main> 
+  <script src="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/js/jquery-3.3.1.min.js"></script> 
+  <script src="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/js/popper.min.js"></script> 
+  <script src="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/js/bootstrap.min.js"></script> 
+  <script src="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/js/mdb.min.js"></script> 
+  <script src="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/js/core.min.js"></script> 
+  <script>
         //Config
         var config_title = "Miku-Status",
             config_title_english = "",
@@ -135,6 +117,6 @@
             load(0);
             t = setTimeout("timedCount()", 1000);
         }
-        </script>
-    </body>
+        </script>   
+ </body>
 </html>
