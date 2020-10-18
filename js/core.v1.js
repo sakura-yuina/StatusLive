@@ -62,7 +62,7 @@ function event_list_statusStr(statusStr, if_or_not_start) {
         if (if_or_not_start == 1) {
             return '<span class="success">开始监控</span>';
         } else {
-            return '<span class="success">恢复正常</span>';
+            return '<span class="success">正常</span>';
         }
 
     } else if (statusStr == "down") {
@@ -300,119 +300,11 @@ function load(clear_table) {
 
 function back_error(text) {
     if (text = "Connection Timeout") {
-        return "连接超时";
+        return "Timeout";
     } else if (text = "No Response") {
         return "无响应";
-    } else if (text == "Continue") {
-        return "100 Continue";
-    } else if (text == "Switching Protocols") {
-        return "101 Switching Protocols";
-    } else if (text == "Processing") {
-        return "102 Processing";
     } else if (text == "OK") {
         return "200 OK";
-    } else if (text == "Created") {
-        return "201 Created";
-    } else if (text == "Accepted") {
-        return "202 Accepted";
-    } else if (text == "Non-Authoritative Information") {
-        return "203 Non-Authoritative Information";
-    } else if (text == "No Content") {
-        return "204 No Content";
-    } else if (text == "Reset Content") {
-        return "205 Reset Content";
-    } else if (text == "Partial Content") {
-        return "206 Partial Content";
-    } else if (text == "Multi-Status") {
-        return "207 Multi-Status";
-    } else if (text == "Multiple Choices") {
-        return "300 Multiple Choices";
-    } else if (text == "Moved Permanently") {
-        return "301 Moved Permanently";
-    } else if (text == "Move temporarily") {
-        return "302 Move temporarily";
-    } else if (text == "See Other") {
-        return "303 See Other";
-    } else if (text == "Not Modelse ified") {
-        return "304 Not Modelse ified";
-    } else if (text == "Use Proxy") {
-        return "305 Use Proxy";
-    } else if (text == "Switch Proxy") {
-        return "306 Switch Proxy";
-    } else if (text == "Temporary Redirect") {
-        return "307 Temporary Redirect";
-    } else if (text == "Bad Request") {
-        return "400 Bad Request";
-    } else if (text == "Unauthorized") {
-        return "401 Unauthorized";
-    } else if (text == "Payment Required") {
-        return "402 Payment Required";
-    } else if (text == "Forbidden") {
-        return "403 Forbidden";
-    } else if (text == "Not Found") {
-        return "404 Not Found";
-    } else if (text == "Method Not Allowed") {
-        return "405 Method Not Allowed";
-    } else if (text == "Not Acceptable") {
-        return "406 Not Acceptable";
-    } else if (text == "Proxy Authentication Required") {
-        return "407 Proxy Authentication Required";
-    } else if (text == "Request Timeout") {
-        return "408 Request Timeout";
-    } else if (text == "Conflict") {
-        return "409 Conflict";
-    } else if (text == "Gone") {
-        return "410 Gone";
-    } else if (text == "Length Required") {
-        return "411 Length Required";
-    } else if (text == "Precondition Failed") {
-        return "412 Precondition Failed";
-    } else if (text == "Request Entity Too Large") {
-        return "413 Request Entity Too Large";
-    } else if (text == "Request-URI Too Long") {
-        return "414 Request-URI Too Long";
-    } else if (text == "Unsupported Media Type") {
-        return "415 Unsupported Media Type";
-    } else if (text == "Requested Range Not Satisfiable") {
-        return "416 Requested Range Not Satisfiable";
-    } else if (text == "Expectation Failed") {
-        return "417 Expectation Failed";
-    } else if (text == "There are too many connections from your internet address") {
-        return "421 There are too many connections from your internet address";
-    } else if (text == "Unprocessable Entity") {
-        return "422 Unprocessable Entity";
-    } else if (text == "Locked") {
-        return "423 Locked";
-    } else if (text == "Failed Dependency") {
-        return "424 Failed Dependency";
-    } else if (text == "Unordered Collection") {
-        return "425 Unordered Collection";
-    } else if (text == "Upgrade Required") {
-        return "426 Upgrade Required";
-    } else if (text == "Retry With") {
-        return "449 Retry With";
-    } else if (text == "Internal Server Error") {
-        return "500 Internal Server Error";
-    } else if (text == "Not Implemented") {
-        return "501 Not Implemented";
-    } else if (text == "Bad Gateway") {
-        return "502 Bad Gateway";
-    } else if (text == "Service Unavailable") {
-        return "503 Service Unavailable";
-    } else if (text == "Gateway Timeout") {
-        return "504 Gateway Timeout";
-    } else if (text == "HTTP Version Not Supported") {
-        return "505 HTTP Version Not Supported";
-    } else if (text == "Variant Also Negotiates") {
-        return "506 Variant Also Negotiates";
-    } else if (text == "Insufficient Storage") {
-        return "507 Insufficient Storage";
-    } else if (text == "Bandwidth Limit Exceeded") {
-        return "509 Bandwidth Limit Exceeded";
-    } else if (text == "Not Extended") {
-        return "510 Not Extended";
-    } else if (text == "Unparseable Response Headers") {
-        return "600 Unparseable Response Headers";
     } else {
         return text;
     }
