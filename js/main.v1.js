@@ -94,7 +94,6 @@ function index_latest_downtime(latestDownTimeStr) {
     latestDownTimeStr = latestDownTimeStr.replace("and the downtime lasted for", "发生故障，持续时间");
     latestDownTimeStr = latestDownTimeStr.replace("hrs,", "小时");
     latestDownTimeStr = latestDownTimeStr.replace("mins.", "分钟。");
-    latestDownTimeStr = latestDownTimeStr.replace("No downtime recorded.", "还未发生故障。");
     
     return latestDownTimeStr;
 }
@@ -104,18 +103,14 @@ function show_chart(monitors_id, i) {
     if(config_show_chart === false){
         return;
     }
-    if(config_ajax_mode==1){
-        var get_url = "core.php?t=1&id=" + monitors_id + "&key=" + config_status_key + "&r=" + Math.random();
-    }else if (config_ajax_mode==2){
-        var get_url = config_ajax_proxy_domain + "/api/getMonitor/"+config_status_key+"?m="+monitors_id + "&_=" + Math.random();
-    }
+        var get_url = config_ajax_proxy_domain + "/api/getMonitor/"+config_status_key+"?m="+monitors_id + "&" + Math.random();
     
     $.ajax({
         url: get_url,
         type: "GET",
         dataType: "json", 
         success: function(data) {
-            $("#div_chart_"+i).html('<br /><br /><canvas id="lag_show_chart_' + i + '"></canvas><br />');
+            $("#div_chart_"+i).html('<br><br><canvas id="lag_show_chart_' + i + '"></canvas><br>');
             
             var event_list='';
             
