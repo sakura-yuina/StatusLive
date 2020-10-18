@@ -256,7 +256,7 @@ function load(clear_table) {
             }
 
             if (!tag_website) {
-                $("#card_website").hide();
+              
             }
             if (!tag_datacenter) {
                 $("#card_datacenter").hide();
