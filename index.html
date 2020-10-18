@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>状态监控 - StatusLive</title>
+        <title>状态监控 - MikuStatus</title>
         <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.css">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/mdb.min.css" rel="stylesheet">
@@ -188,7 +188,7 @@
                     <div class="double-bounce2"></div>
                 </div>
                 <div class="" id="all_card" style="display:none;">
-                     <h5 id="texts">报告生成时间：<span id="report_time">2XXX年XX月XX日 XX:XX:XX</span>&nbsp;&nbsp;&nbsp;<i class="fa fa-refresh" aria-hidden="true" style="font-size: 1rem;"></i>&nbsp;<span class="seconds">60s</span></h5>
+                     <h5 id="texts">报告生成时间：<span id="report_time">2020年10月1日 10:00:01</span>&nbsp;&nbsp;&nbsp;<i class="fa fa-refresh" aria-hidden="true" style="font-size: 1rem;"></i>&nbsp;<span class="seconds">60s</span></h5>
 
                     <br />
                     <div class="card hoverable" id="card_website">
@@ -248,34 +248,13 @@
                         </div>
                     </div>
                     <!-- /Ping 监控 -->
-                    <!-- HTTP 监控 -->
-                    <div class="card hoverable">
-                        <div class="card-body">
-                             <h4 class="card-title">网站<span style="font-size:1rem">&nbsp;WebSite</span></h4>
-
-                            <table class="table table-borderless table-sm">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">状态</th>
-                                        <th scope="col">可用率</th>
-                                        <th scope="col">名称</th>
-                                        <th scope="col">详细可用率（过去7天）</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="website_list"></tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <!-- /HTTP 监控 -->
                     <!-- 详情框架 -->
                     <div id="all_modal"></div>
                     <!-- /详情框架 -->
                     <!-- 页底版权 -->
                     <!-- 您可以添加自己站点的相关信息，但还请您请保留已有版权信息 -->
-                    <footer id="main-footer" style="text-align:right;">Powered by <a href="http://www.freejishu.com">freejishu</a>&nbsp;&nbsp;Data&nbsp;by&nbsp;
-                        <a href="https://uptimerobot.com">
-                            <img src="./img/uptime-logo.png" alt="Uptime Robot Logo">
-                        </a>
+                    <footer id="main-footer" style="text-align:right;">Powered by Freejishu &nbsp;&nbsp;Data&nbsp;by&nbsp;
+                    Uptimerobot
                     </footer>
                     <br />
                     <br />
@@ -291,14 +270,14 @@
         <script type="text/javascript" src="js/core.js"></script>
         <script>
         //喜闻乐见的配置区域
-        var config_title = "状态监控",//主标题
-            config_title_english = "StatusLive",//副标题（英文标题）
-            config_warning_flash = false,//warning区域是否添加特效（闪一下）
-            config_status_key = "KQLq0Cy2M";//你的statuspageskey
-            config_ajax_mode = 2;//ajax模式 1为依赖core.php模式 2为反代模式
-            config_ajax_proxy_domain = "https://uptimerobot-agent.freejishu.com/uptime"; //当config_ajax_mode设定为2时，在此填写反代域名（要有http(s)://，末尾不带斜杠）
-            config_show_chart = true;//是否展示图标
-            config_auto_refresh_seconds = 60;//数据刷新时间，单位为秒，建议不低于60
+        var config_title = "MikuBar - 监控",
+            config_title_english = "Miku - Status",
+            config_warning_flash = false,//warning
+            config_status_key = "4Y6pZuJ7XO";//statuspageskey
+            config_ajax_mode = 2;
+            config_ajax_proxy_domain = "https://uptimerobot-agent.freejishu.com/uptime";
+            config_show_chart = true;
+            config_auto_refresh_seconds = 80;
             
         wow = new WOW().init();
 
