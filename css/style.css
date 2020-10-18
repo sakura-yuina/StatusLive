@@ -1,0 +1,164 @@
+        body {
+            background: #efefef;
+        }
+        .flex-1 {
+            flex: 1;
+        }
+        .spinner {
+            width: 60px;
+            height: 60px;
+            position: relative;
+            margin: 100px auto;
+            top: 150px;
+        }
+        .double-bounce1, .double-bounce2 {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #67CF22;
+            opacity: 0.6;
+            position: absolute;
+            top: 0;
+            left: 0;
+            -webkit-animation: bounce 2.0s infinite ease-in-out;
+            animation: bounce 2.0s infinite ease-in-out;
+        }
+        .double-bounce2 {
+            -webkit-animation-delay: -1.0s;
+            animation-delay: -1.0s;
+        }
+        @-webkit-keyframes bounce {
+            0%, 100% {
+                -webkit-transform: scale(0.0)
+            }
+            50% {
+                -webkit-transform: scale(1.0)
+            }
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: scale(0.0);
+                -webkit-transform: scale(0.0);
+            }
+            50% {
+                transform: scale(1.0);
+                -webkit-transform: scale(1.0);
+            }
+        }
+        #ratio_table {
+            overflow-x:auto;
+            overflow-y:hidden;
+            white-space: nowrap;
+        }
+        .card {
+            overflow-x:auto;
+            overflow-y:hidden;
+            white-space: nowrap;
+            margin-bottom:20px;
+        }
+        .table-status-item {
+            display: block;
+            text-align: center;
+            white-space: nowrap;
+            padding: 0 5px;
+            line-height: 25px;
+            font-size: 12px;
+            font-weight: 600;
+            width: 70px;
+            float:left;
+            margin-left: 2px;
+            margin-right: 2px;
+        }
+        .bullet {
+            display: inline-block;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+        }
+        .success {
+            color: #80BA27;
+        }
+        .danger {
+            color: #ff0000;
+        }
+        .warning {
+            color: #f7921e;
+        }
+        .paused, .info {
+            color: #17252e;
+        }
+        .success-bg {
+            color: #fff;
+            background-color: #80BA27;
+        }
+        .danger-bg {
+            color: #fff;
+            background-color: #ff0000;
+        }
+        .warning-bg {
+            color: #fff;
+            background-color: #f7921e;
+        }
+        .paused-bg, .info-bg, .black-bg {
+            color: #fff;
+            background-color: #17252e;
+        }
+        .empty-bg {
+            color: #fff;
+            background: #9c9b9b;
+        }
+        .td_new_font_size {
+            font-size: 1.2rem;
+        }
+        .table {
+            margin-bottom:0;
+        }
+        .show_more_information:hover {
+            text-decoration:underline;
+        }
+        .seconds {
+            font-size: 1rem;
+        }
+        .refresh_animation{
+            animation:refresh_turn 2.5s linear infinite;
+            -moz-animation:refresh_turn 2.5s linear infinite;
+            -webkit-animation:refresh_turn 2.5s linear infinite; 
+            -o-animation:refresh_turn 2.5s linear infinite;
+        }
+        @keyframes refresh_turn {
+            from {
+                transform:rotate(0deg);
+                -ms-transform:rotate(0deg);
+            }
+            to {
+                transform:rotate(360deg);
+                -ms-transform:rotate(360deg); 
+            }
+        }
+        @-moz-keyframes refresh_turn
+        {
+            from {
+                -moz-transform:rotate(0deg);
+            }
+            to {
+                -moz-transform:rotate(360deg);
+            }
+        }
+        @-webkit-keyframes refresh_turn
+        {
+            from {
+                -webkit-transform:rotate(0deg); 
+            }
+            to {
+                -webkit-transform:rotate(360deg); 
+            }
+        }
+        @-o-keyframes refresh_turn
+        {
+            from {
+                -o-transform:rotate(0deg); 
+            }
+            to {
+                -o-transform:rotate(360deg); 
+            }
+        }
