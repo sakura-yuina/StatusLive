@@ -174,11 +174,8 @@ function show_chart(monitors_id, i) {
 function load(clear_table) {
     $(".seconds").html("ing");
     $(".fa-refresh").addClass('refresh_animation');
-    if(config_ajax_mode==1){
-        var get_url = "core.php?key="+config_status_key + "&r=" + Math.random();
-    }else if(config_ajax_mode==2){
         var get_url = config_ajax_proxy_domain + "/api/getMonitorList/"+config_status_key+"?page=1&_=" + Math.random();
-    }
+        
     $.ajax({
         url: get_url,
         type: "GET",
