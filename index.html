@@ -8,7 +8,7 @@
         <link href="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/css/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet">
         <link href="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/css/bootstrap.min.css" rel="stylesheet">
         <link href="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/css/mdb.min.css" rel="stylesheet">
-        <link href="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/css/style.css" rel="stylesheet">
+        <link href="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/css/style.min.css" rel="stylesheet">
     </head>
     
     <body>
@@ -22,7 +22,7 @@
                     <div class="double-bounce2"></div>
                 </div>
                 <div class="" id="all_card" style="display:none;">
-                     <h5 id="texts">报告生成时间：<span id="report_time">2020年10月1日 10:00:01</span>&nbsp;&nbsp;&nbsp;<i class="fa fa-refresh" aria-hidden="true" style="font-size: 1rem;"></i>&nbsp;<span class="seconds">60s</span></h5>
+                     <h5 id="texts">报告生成时间：<span id="report_time">2020年10月1日 10:00:01</span>&nbsp;&nbsp;&nbsp;<i class="fa fa-refresh" aria-hidden="true" style="font-size: 1rem;"></i>&nbsp;<span class="seconds">300s</span></h5>
 
                     <br />
                     <div class="card hoverable" id="card_website">
@@ -116,7 +116,7 @@
         <script src="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/js/popper.min.js"></script>
         <script src="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/js/bootstrap.min.js"></script>
         <script src="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/js/mdb.min.js"></script>
-        <script src="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/js/core.js"></script>
+        <script src="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/js/core.min.js"></script>
         <script>
         //Config
         var config_title = "Miku-Status",
@@ -126,7 +126,7 @@
             config_ajax_mode = 2;
             config_ajax_proxy_domain = "https://uptimerobot-agent.freejishu.com/uptime";
             config_show_chart = true;
-            config_auto_refresh_seconds = 60;
+            config_auto_refresh_seconds = 300;
             
         wow = new WOW().init();
 
