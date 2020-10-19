@@ -99,7 +99,7 @@
   <script src="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/js/popper.min.js?v=1.2.0"></script> 
   <script src="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/js/bootstrap.min.js?v=1.2.0"></script> 
   <script src="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/js/mdb.min.js?v=1.2.0"></script> 
-  <script src="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/js/main.v8.js?v=1.2.0"></script> 
+  <script src="//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/js/main.v9.js?v=1.2.0"></script> 
   <script>
         //Config
         var config_title = "Miku-Status",
@@ -116,7 +116,24 @@
             set_page_info();
             load(0);
             t = setTimeout("timedCount()", 1000);
+             /* hitokoto API */
+    var hitokoto = document.querySelector('.hitokoto');
+    var from = document.querySelector('.from');
+    update();
+    function update() {
+        gethi = new XMLHttpRequest();
+        gethi.open("GET","https://v1.hitokoto.cn/?c=a&c=b");
+        gethi.send();
+        gethi.onreadystatechange = function () {
+            if (gethi.readyState===4 && gethi.status===200) {
+                var Hi = JSON.parse(gethi.responseText);
+                hitokoto.innerHTML = Hi.hitokoto;
+                from.innerHTML = "From: <b>" + Hi.from + "</b>";
+            }
         }
+    }
+}
+   }
         </script>   
  </body>
 </html>
