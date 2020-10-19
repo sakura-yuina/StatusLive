@@ -1,5 +1,18 @@
 body {    
-    background: #39C5BB;
+    background: #39C5BB
+}
+
+::-webkit-scrollbar {
+	width: 5px;
+	height: 5px
+}
+  
+ ::-webkit-scrollbar-thumb {
+	 background: #F0FFFF
+}
+  
+ ::-webkit-scrollbar-track {
+	 background: #66CCFF
 }
 
 .flex-1 {
@@ -11,7 +24,7 @@ body {
 	height: 60px;
 	position: relative;
 	margin: 100px auto;
-	top: 150px;
+	top: 150px
 }
 
 .double-bounce1, .double-bounce2 {
