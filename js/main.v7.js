@@ -162,15 +162,21 @@ function show_chart(monitors_id, i) {
 }
 
 //Hitokoto
-  fetch('https://v1.hitokoto.cn/?c=a&c=b')
-    .then(response => response.json())
-    .then(data => {
-      const hitokoto = document.getElementById('hitokoto_text');
-      const from = document.getElementById('hitokoto_from')
-      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
-      hitokoto.innerText = data.hitokoto
-    })
-    .catch(console.error)
+  $.ajax({
+    type: 'GET',
+    url: 'https://v1.hitokoto.cn/?c=a&c=b',
+    dataType: 'jsonp',
+    jsonp: 'callback',
+    jsonpCallback: 'hitokoto',
+    success (data) {
+      $('#hitokoto_from').attr('href', 'https://hitokoto.cn/?uuid=' + data.uuid)
+      $('#hitokoto_text').text(data.hitokoto)
+    },
+    error (jqXHR, textStatus, errorThrown) {
+      console.error(textStatus, errorThrown)
+    }
+  })
+
 
 function load(clear_table) {
     $(".seconds").html("ing");
