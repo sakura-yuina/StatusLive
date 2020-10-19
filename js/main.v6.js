@@ -165,8 +165,8 @@ function show_chart(monitors_id, i) {
   fetch('https://v1.hitokoto.cn/?c=a&c=b')
     .then(response => response.json())
     .then(data => {
-      const hitokoto = document.getElementById('hitokoto_text')
-      const hitokoto = document.getElementById('hitokoto_from')
+      const hitokoto = document.getElementById('hitokoto_text');
+      const from = document.getElementById('hitokoto_from')
       hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
       hitokoto.innerText = data.hitokoto
     })
