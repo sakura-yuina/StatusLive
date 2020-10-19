@@ -1,7 +1,5 @@
 body {    
-    background-image:url('//cdn.jsdelivr.net/gh/sakura-yuina/StatusLive/img/background.jpg');
-    background-repeat:no-repeat;
-    background-position:center;
+    background: #39C5BB;
 }
 
 .flex-1 {
