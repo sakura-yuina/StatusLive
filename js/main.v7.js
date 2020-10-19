@@ -161,21 +161,25 @@ function show_chart(monitors_id, i) {
 
 }
 
-//Hitokoto
-  $.ajax({
-    type: 'GET',
-    url: 'https://v1.hitokoto.cn/?c=a&c=b',
-    dataType: 'jsonp',
-    jsonp: 'callback',
-    jsonpCallback: 'hitokoto',
-    success (data) {
-      $('#hitokoto_from').attr('href', 'https://hitokoto.cn/?uuid=' + data.uuid)
-      $('#hitokoto_text').text(data.hitokoto)
-    },
-    error (jqXHR, textStatus, errorThrown) {
-      console.error(textStatus, errorThrown)
+    /* hitokoto API */
+window.onload=function () {
+    var hitokoto = document.querySelector('.hitokoto');
+    var from = document.querySelector('.from');
+    update();
+    function update() {
+        gethi = new XMLHttpRequest();
+        gethi.open("GET","https://v1.hitokoto.cn/?c=a&c=b");
+        gethi.send();
+        gethi.onreadystatechange = function () {
+            if (gethi.readyState===4 && gethi.status===200) {
+                var Hi = JSON.parse(gethi.responseText);
+                hitokoto.innerHTML = Hi.hitokoto;
+                from.innerHTML = "From: <b>" + Hi.from + "</b>";
+            }
+        }
     }
-  })
+}
+
 
 
 function load(clear_table) {
