@@ -89,7 +89,7 @@ function event_list_durationStr(durationStr) {
 }
 
 function index_latest_downtime(latestDownTimeStr) {
-    latestDownTimeStr = latestDownTimeStr.replace("It was recorded (for the monitor", "监控点");
+    latestDownTimeStr = latestDownTimeStr.replace("It was recorded (for the monitor", "监控节点");
     latestDownTimeStr = latestDownTimeStr.replace(") on", " 于");
     latestDownTimeStr = latestDownTimeStr.replace("and the downtime lasted for", "发生故障，持续时间");
     latestDownTimeStr = latestDownTimeStr.replace("hrs,", "小时");
@@ -161,11 +161,12 @@ function show_chart(monitors_id, i) {
 
 }
 
-//增加一言
+//Hitokoto
   fetch('https://v1.hitokoto.cn/?c=a&c=b')
     .then(response => response.json())
     .then(data => {
       const hitokoto = document.getElementById('hitokoto_text')
+      const hitokoto = document.getElementById('hitokoto_from')
       hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
       hitokoto.innerText = data.hitokoto
     })
@@ -179,7 +180,7 @@ function load(clear_table) {
     $.ajax({
         url: get_url,
         type: "GET",
-        dataType: "json", //指定服务器返回的数据类型
+        dataType: "json",
         success: function(data) {
             var date = new Date(),
                 year = date.getFullYear(),
@@ -206,7 +207,7 @@ function load(clear_table) {
                 data_table = data_table + '<td scope="col">' + data.days[i] + "</td>";
             }
             //console.log(data_table);
-            $("#latest_downtime").html("最近一次故障：" + index_latest_downtime(data.statistics.latest_downtime));
+            $("#latest_downtime").html("最近一次事故：" + index_latest_downtime(data.statistics.latest_downtime));
 
             for (var i = 0; i < data.psp.totalMonitors; i++) {
                 if (data.psp.monitors[i].type == "http(s)") {
@@ -301,7 +302,7 @@ function load(clear_table) {
 
 function back_error(text) {
     if (text = "Connection Timeout") {
-        return "Timeout";
+        return "超时";
     } else if (text = "No Response") {
         return "无响应";
     } else if (text == "OK") {
