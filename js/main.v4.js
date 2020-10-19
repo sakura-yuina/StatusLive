@@ -162,7 +162,7 @@ function show_chart(monitors_id, i) {
 }
 
 //增加一言
-  fetch('https://v1.hitokoto.cn')
+  fetch('https://v1.hitokoto.cn/?c=a&c=b')
     .then(response => response.json())
     .then(data => {
       const hitokoto = document.getElementById('hitokoto_text')
