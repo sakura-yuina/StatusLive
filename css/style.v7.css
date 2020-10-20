@@ -8,11 +8,11 @@ body {
 }
   
  ::-webkit-scrollbar-thumb {
-	 background: #66CCFF
+	 background: #5DAC81
 }
   
  ::-webkit-scrollbar-track {
-	 background: #F0FFFF
+	 background: #FCFAF2
 }
 
 .flex-1 {
