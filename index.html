@@ -8,16 +8,27 @@
   <link href="css/bootstrap.min.css?v=1.2.0" rel="stylesheet" /> 
   <link href="css/mdb.min.css?v=1.2.0" rel="stylesheet" /> 
   <link href="css/style.css?v=1.2.0" rel="stylesheet" /> 
-  <style>.card-body{background-color:#FCFAF2};</style>
+  <style>.loading{margin:100px auto 0;width:80px;height:40px}
+.loading span{display:inline-block;width:8px;height:100%;border-radius:4px;background:#90ee90;-webkit-animation:load 1s ease infinite}
+@-webkit-keyframes load{0%,to{height:40px;background:#90ee90}
+50%{margin:-15px 0;height:70px;background:#add8e6}}
+.loading span:nth-child(2){-webkit-animation-delay:.2s}
+.loading span:nth-child(3){-webkit-animation-delay:.4s}
+.loading span:nth-child(4){-webkit-animation-delay:.6s}
+.loading span:nth-child(5){-webkit-animation-delay:.8s}
+.card-body{background-color:#FCFAF2};</style>
  </head> 
  <body> 
   <main> 
    <div class="container" style="margin-top:1.5%"> 
     <h2 class="h1 mb-4"><span id="title_big" style="color:#FFF"></span>&nbsp;&nbsp;</h2> 
     <!--<div></div>--> 
-    <div class="spinner" id="loading"> 
-     <div class="double-bounce1"></div> 
-     <div class="double-bounce2"></div> 
+    <div class="loading" id="loading">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
     </div> 
     <div class="" id="all_card" style="display:none;"> 
      <h5 id="texts" style="color:#FFF">报告生成时间：<span id="report_time">2020年10月1日 10:00:01</span>&nbsp;&nbsp;&nbsp;
